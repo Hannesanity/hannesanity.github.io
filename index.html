@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body> 
+    <header>
+        <a href="#" class="logo">^</a>
+        <nav>
+            <a href="#intro" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contacts" class="btn btn-contact">Contact Me</a>
+        </nav>
+        
+    </header>         
+
+    <div class="main-bg">
+        <canvas></canvas>
+    </div>
+
+    <section class="intro" id="intro">
+        <section class="pri-container">
+            <div class="container">
+                <div class="textbox">
+                    <h1>Hello, my name is <strong>Hanniel Pabico</strong></h1>
+                    <h4>An aspiring backend developer that develops web-based and software applications</h4>
+                    <a class="btn btn-intro" href="#about">View my profile</a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="heading">About</h2>
+        <div class="row">
+            <section class="pri-container">
+                <div class="container fade-in">
+                    <div class="profile"> 
+                        <div class="profile-icon"><img src="img/cl.jpg" alt="Personal Picture"></div>  
+                        <h4>Aspiring to thrive as a backend developer. I have started learning the fundamentals of web and software development and aim to excel as a developer who continuously learns and adapts to technological changes and innovations.</h4>
+                    </div>
+                </div>
+                <div class="container fade-in">
+                    <div class="icon-row">
+                        <div class="icon-about">
+                            <img src="img/bootstrap.png">
+                            <p>Bootstrap</p>
+                        </div>
+                        <div class="icon-about">
+                            <img src="img/css.png">
+                            <p>CSS</p>
+                        </div>
+                        <div class="icon-about">
+                            <img src="img/javascript.png">
+                            <p>JavaScript</p>
+                        </div>
+                    </div> 
+                    <div class="icons-row">
+                        <div class="icon-about">
+                            <img src="img/flask.png">
+                            <p>Flask</p>
+                        </div>
+                        <div class="icon-about">
+                            <img src="img/github.png">
+                            <p>GitHub</p>
+                        </div>
+                        <div class="icon-about">
+                            <img src="img/html.png">
+                            <p>HTML</p>
+                        </div>
+                    </div>  
+                    <div class="icon-row">
+                        <div class="icon-about">
+                            <img src="img/python.png">
+                            <p>Python</p>
+                        </div>
+                        <div class="icon-about">
+                            <img src="img/ml.png">
+                            <p>Machine Learning</p>
+                        </div>
+                        <div class="icon-about">
+                            <img src="img/ai.png">
+                            <p>Artificial Intelligence</p>
+                        </div>
+                        
+                    </div>     
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="heading">Projects</h2>
+        <div class="row">
+            <div class="pri-container">
+                <div class="container fade-in">
+                    <img src="img/cl.jpg" alt="Personal Picture">
+                </div>
+                <div class="container fade-in">
+                    <div class="textbox">
+                        <h2>TimeSpy</br>Python App Usage Tracker</h2>
+                        <h5>Python application with a Tkinter GUI designed for managing tasks, tracking progress, and sending email notifications.</h5>
+                        <a href="https://github.com/Hannesanity/TimeSpy" class="btn btn-learn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <h2 class="heading">Contacts</h2>
+        <div class="row">
+            <div class="pri-container">
+                <div class="container fade-in">
+                    <div class="row">
+                        <div class="textbox">
+                            <h4>Have any questions or interests? Kindly leave your details here and I'll get back to you as soon as possible.</h4>
+                            <form onsubmit="return sendEmail();">
+                                <input type="text" placeholder="Name" required> <input type="email" placeholder="Email" required> 
+                                <textarea placeholder="Message" required></textarea> <button class="button" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="socials">
+            <a href="https://github.com/Hannesanity">
+                <div class="socialicon"><img src="img/github.png" alt></div>
+            </a>
+            <a href="https://www.linkedin.com/in/hanniel-pabico-4156442b6/"></a>
+                <div class="socialicon"><img src="img/linkedin.png" alt></div>
+            </a>
+            <a href="mailto:hannielpabs@gmail.com"></a>
+                <div class="socialicon"><img src="img/email.png" alt></div>
+            </a>
+        </div>
+        <p class="copyright">HANNIEL PABICO @2024</p>
+    </footer>
+  
+
+    
+    <!-- Your script references here -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.7.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+</body>
+</html>
