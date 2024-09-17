@@ -174,6 +174,7 @@ section {
     flex: 1 1 150px;
     max-width: 240px;
     margin-bottom: 4rem;
+    color: #6153B7
 }
 
 .profile-icon > img {
