@@ -10,16 +10,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body> 
-    <header>
-        <a href="#" class="logo"></a>
-        <nav>
-            <a href="#intro" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contacts" class="btn btn-contact">Contact Me</a>
-        </nav>
-        
-    </header>         
+            
 
     <div class="main-bg">
         <canvas></canvas>
@@ -27,20 +18,27 @@
 
     <section class="intro" id="intro">
         <section class="pri-container">
-            <div class="container">
+            <div class="container fade-in">
                 <div class="textbox">
                     <h1>Hello, my name is <strong>Hanniel Pabico</strong></h1>
-                    <h4>An aspiring backend developer that develops web-based and software applications</h4>
+                    <h5>I am <strong><span id="description"></span></strong></h5>
                     <a class="btn btn-intro" href="#about">View my profile</a>
                 </div>
             </div>
         </section>
     </section>
 
+    <nav class="header">
+        <a href="#intro" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contacts" class="btn btn-contact">Contact Me</a>
+    </nav>
+
     <section class="about" id="about">
         <h2 class="heading">About</h2>
         <div class="row">
-            <section class="pri-container">
+            <div class="pri-container">
                 <div class="container fade-in">
                     <div class="profile"> 
                         <div class="profile-icon"><img src="img/person.png" alt></div>  
@@ -156,7 +154,7 @@
     <script src="js/jquery-3.7.0.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     
 </body>
