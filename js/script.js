@@ -129,7 +129,7 @@ function isInViewport(element) {
 function handleScroll() {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el) => {
-        if (isInViewport(el)) {
+        if (el.id === 'intro' || isInViewport(el)) {
             el.classList.add('visible');
         }
     });
@@ -137,7 +137,6 @@ function handleScroll() {
 
 // Add scroll event listener
 window.addEventListener('scroll', handleScroll);
-
 
 
 // Trigger scroll check on page load
