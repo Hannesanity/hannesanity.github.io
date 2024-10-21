@@ -1,6 +1,7 @@
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav a');
 
+
 window.addEventListener('scroll', function() {
     const sections = document.querySelectorAll('section');  // Assuming sections have the tags <section>
     const navLinks = document.querySelectorAll('nav a');
@@ -25,12 +26,13 @@ window.addEventListener('scroll', function() {
     });
 });
 
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
         event.preventDefault();
         const targetId = anchor.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        const offset = 96;
+        const offset = 48;
         const elementPosition = targetElement.offsetTop - offset;
 
         window.scrollTo({
@@ -129,7 +131,7 @@ function isInViewport(element) {
 function handleScroll() {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el) => {
-        if (el.id === 'intro' || isInViewport(el)) {
+        if (isInViewport(el)) {
             el.classList.add('visible');
         }
     });
@@ -138,9 +140,6 @@ function handleScroll() {
 // Add scroll event listener
 window.addEventListener('scroll', handleScroll);
 
-
-// Trigger scroll check on page load
-handleScroll();
 
 
 function sendEmail() {
@@ -158,10 +157,15 @@ function sendEmail() {
             email,
             message,
         }),
-    });
+    })
 
-    alert("Thank you for contacting me. I'll get back to you as soon as possible.");
-    location.reload();
+    .then(data => {
+        console.log('Success:', data);
+        alert("Thank you for contacting me. I'll get back to you as soon as possible.");
+        location.reload();
+    })
+
+      
 
     
     return false;
@@ -174,6 +178,7 @@ var descriptions = [
 ];
 var i = 0;
 var timeout = 2000;
+
 function typeDescription() {
     const elem = document.getElementById("description");
     const text = descriptions[i];
@@ -191,4 +196,5 @@ function typeDescription() {
     }, 50);
 }
 typeDescription();
+
 

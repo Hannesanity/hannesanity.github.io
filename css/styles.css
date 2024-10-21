@@ -15,11 +15,11 @@
 
 body {
   display: flex;
-  overflow-x: hidden;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
-.main-bg {
+.main {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -38,7 +38,7 @@ canvas {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 16px 5%;
+  padding: 16px 8%;
   background-color: rgba(194, 197, 219, 0.5);
   display: flex;
   justify-content: flex-end;
@@ -46,12 +46,6 @@ canvas {
   z-index: 100;
 }
 
-.logo {
-  font-size: 25px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
 nav a {
   font-size: 24px;
   color: #fff;
@@ -60,9 +54,14 @@ nav a {
   margin-left: 32px;
   transition: 0.3s;
 }
+
 nav a:hover,
 nav a.active {
   color: #6153b7;
+}
+
+.header .icon {
+  display: none;
 }
 
 section {
@@ -189,7 +188,10 @@ section {
   gap: 24px;
 }
 
-.pri-container {
+.intro-container,
+.about-container,
+.project-container,
+.contact-container {
   display: flex;
   justify-content: center;
   height: 80vh;
@@ -199,10 +201,6 @@ section {
 .about,
 .contacts {
   color: white;
-}
-
-.pri-container h3 {
-  font-size: 2.5rem;
 }
 
 .intro {
@@ -216,7 +214,7 @@ section {
   text-align: left;
   padding-right: 10%;
   color: white;
-  gap: 16px;
+  gap: 24px;
 }
 
 .textbox .btn-intro {
@@ -229,8 +227,8 @@ textarea {
   resize: vertical;
 }
 
-.pri-container input,
-.pri-container textarea {
+.contact-container input,
+.contact-container textarea {
   width: 100%;
   margin-bottom: 16px;
   padding: 8px;
@@ -270,6 +268,7 @@ textarea {
 .icon-about:not(:last-child) {
   margin-bottom: 3rem;
 }
+
 .icon-about {
   margin-bottom: 24px;
   width: 160px;
@@ -341,10 +340,17 @@ textarea {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .header {
+    padding: 8px 4%;
+  }
 }
 
 @media (min-width: 1068px) {
-  .pri-container {
+  .intro-container,
+  .about-container,
+  .project-container,
+  .contact-container {
     flex-direction: row;
   }
 
@@ -353,9 +359,21 @@ textarea {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1068px) {
   .heading {
     margin-top: 3rem;
+  }
+  .about-container,
+  .project-container {
+    height: auto;
+  }
+
+  .project-container {
+    margin-bottom: 3rem;
+  }
+
+  .project-container > .container:first-child {
+    margin-bottom: 3rem;
   }
 }
 
@@ -380,5 +398,23 @@ textarea {
     max-width: 100px;
     margin-top: 16px;
     margin-bottom: 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .icon-about {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 100px;
+    height: 100px;
+  }
+  .icon-about > img {
+    max-height: 36px;
+    max-width: 36px;
+  }
+  .profile-icon {
+    max-width: 80px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
