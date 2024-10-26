@@ -1,10 +1,8 @@
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('header nav a');
+const navLinks = document.querySelectorAll('.nav-link');
 
 
 window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section');  // Assuming sections have the tags <section>
-    const navLinks = document.querySelectorAll('nav a');
 
     let currentSection = '';
 
@@ -17,15 +15,16 @@ window.addEventListener('scroll', function() {
         }
     });
 
-    // Remove active class from all links and set it for the visible section's link
+    // Remove active class from all links
+    navLinks.forEach((link) => link.classList.remove('active'));
+
+    // Add active class to the visible section's link
     navLinks.forEach((link) => {
-        link.classList.remove('active');
         if (link.getAttribute('href') === `#${currentSection}`) {
             link.classList.add('active');
         }
     });
 });
-
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
@@ -40,8 +39,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             behavior: 'smooth',
         });
 
-        // Remove active class from all links and add to the clicked one
-        document.querySelectorAll('nav a').forEach((link) => link.classList.remove('active'));
+        // Remove active class from all links
+        navLinks.forEach((link) => link.classList.remove('active'));
+
+        // Add active class to the clicked link
         anchor.classList.add('active');
     });
 });

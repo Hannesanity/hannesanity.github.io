@@ -33,7 +33,7 @@ canvas {
   z-index: -1;
 }
 
-.header {
+.navbar {
   position: sticky;
   top: 0;
   left: 0;
@@ -41,9 +41,16 @@ canvas {
   padding: 16px 8%;
   background-color: rgba(194, 197, 219, 0.5);
   display: flex;
+  z-index: 100;
+}
+
+.navbar-collapse {
   justify-content: flex-end;
   align-items: center;
-  z-index: 100;
+}
+
+.nav-link {
+  color: #fff;
 }
 
 nav a {
@@ -55,8 +62,8 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover,
-nav a.active {
+.nav-link:hover,
+.nav-link.active {
   color: #6153b7;
 }
 
@@ -106,16 +113,6 @@ section {
   padding-right: 24px;
 }
 
-.btn-contact {
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: #e6dc6a;
-  color: white;
-  cursor: pointer;
-  padding: 8px 16px;
-  font-weight: bold;
-}
-
 .btn-learn {
   align-self: flex-start;
   padding: 10px 20px;
@@ -133,11 +130,6 @@ section {
 
 .btn-intro:hover {
   background-color: #d9c55c;
-}
-
-.btn-contact:hover {
-  background-color: #d9c55c;
-  color: #6153b7;
 }
 
 .container {
