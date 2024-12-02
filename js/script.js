@@ -165,10 +165,6 @@ function sendEmail() {
         alert("Thank you for contacting me. I'll get back to you as soon as possible.");
         location.reload();
     })
-
-      
-
-    
     return false;
 }
 
