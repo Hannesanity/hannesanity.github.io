@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
 
-  src: url("Oswald-Regular.ttf") format("truetype"); /* Replace 'path/to/Oswald-Regular.ttf' with the actual path to your font file */
+  src: url("Oswald-Regular.ttf") format("truetype");
 }
 
 * {
