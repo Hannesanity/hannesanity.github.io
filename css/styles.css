@@ -1,9 +1,8 @@
 @font-face {
-  font-family: "Oswald";
+  font-family: "Renogare";
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
-
-  src: url("Oswald-Regular.ttf") format("truetype");
+  src: url("../assets/font/Renogare-Regular.otf") format("opentype");
 }
 
 * {
@@ -17,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  font-family: "Renogare", sans-serif;
 }
 
 .main {
@@ -31,6 +31,10 @@ body {
 canvas {
   position: absolute;
   z-index: -1;
+}
+
+a {
+  color: #6153b7;
 }
 
 .navbar {
@@ -54,11 +58,11 @@ canvas {
 }
 
 nav a {
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  margin-left: 32px;
+  margin-left: 24px;
   transition: 0.3s;
 }
 
@@ -91,7 +95,7 @@ section {
   border-radius: 8px;
   font-size: 24px;
   background-color: #e6dc6a;
-  color: black;
+  color: white;
   border: none;
   cursor: pointer;
   padding-left: 24px;
@@ -293,7 +297,7 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 160px;
+  height: 15vh;
   background-color: rgba(194, 197, 219, 0.5);
 }
 

@@ -52,6 +52,7 @@ window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
 });
 
+
 const canvas = document.querySelector('canvas');
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
@@ -60,30 +61,28 @@ const context = canvas.getContext('2d');
 
 const colorArray = ['#F047FE', '#6153B7', '#E6DC6A', '#C2C5DB'];
 
-
-function Circle(x, y, dx, dy, radius) {
+// Adjust the Circle constructor to work with pixelated blocks
+function Pixel(x, y, dx, dy, size) {
     this.x = x;
     this.y = y;
     this.dx = dx;
     this.dy = dy;
-    this.radius = radius;
+    this.size = size; // Size of the "pixel"
     this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
 
-
     this.draw = function () {
-        context.beginPath();
-        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        // Use fillRect to simulate a pixelated effect
         context.fillStyle = this.color;
-        context.fill();
+        context.fillRect(this.x, this.y, this.size, this.size);
     };
 
     this.move = function () {
-
-        if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+        // Bounce off the walls like before
+        if (this.x + this.size > innerWidth || this.x < 0) {
             this.dx = -this.dx;
         }
 
-        if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+        if (this.y + this.size > innerHeight || this.y < 0) {
             this.dy = -this.dy;
         }
 
@@ -94,30 +93,29 @@ function Circle(x, y, dx, dy, radius) {
     };
 }
 
-const circleArray = [];
+const pixelArray = [];
 
 for (let i = 0; i < 50; i++) {
-    const radius = Math.random() * 2 + 1;
-    const x = Math.random() * (innerWidth - radius * 2) + radius;
-    const y = Math.random() * (innerHeight - radius * 2) + radius;
+    const size = Math.random() * 5 + 5; // Set pixel size
+    const x = Math.random() * (innerWidth - size * 2) + size;
+    const y = Math.random() * (innerHeight - size * 2) + size;
     const dx = (Math.random() - 0.5) * 1.5;
     const dy = (Math.random() - 0.5) * 1.5;
-    circleArray.push(new Circle(x, y, dx, dy, radius));
+    pixelArray.push(new Pixel(x, y, dx, dy, size));
 }
 
 function animate() {
     requestAnimationFrame(animate);
     context.clearRect(0, 0, innerWidth, innerHeight);
 
-    for (const circle of circleArray) {
-        circle.move();
+    for (const pixel of pixelArray) {
+        pixel.move();
     }
 }
 
 animate();
 
 
-// Function to check if an element is in the viewport
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -128,7 +126,7 @@ function isInViewport(element) {
     );
 }
 
-// Function to handle scroll events
+
 function handleScroll() {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el) => {
@@ -138,10 +136,8 @@ function handleScroll() {
     });
 }
 
-// Add scroll event listener
+
 window.addEventListener('scroll', handleScroll);
-
-
 
 function sendEmail() {
     const name = document.querySelector('input[type="text"]').value;
@@ -169,9 +165,9 @@ function sendEmail() {
 }
 
 var descriptions = [
-    "an aspiring backend developer..",
-    "an aspiring web developer..",
-    "an aspiring software developer..",
+    "a backend developer..",
+    "a web developer..",
+    "a software developer..",
 ];
 var i = 0;
 var timeout = 2000;
