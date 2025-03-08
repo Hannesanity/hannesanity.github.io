@@ -2,7 +2,7 @@
   font-family: "Renogare";
   font-weight: normal;
   font-style: normal;
-  src: url("../assets/font/Renogare-Regular.otf") format("opentype");
+  src: url("../assets/font/CascadiaCode-Light.otf") format("opentype");
 }
 
 * {
@@ -24,7 +24,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #3b3c4a;
+  background-color: rgba(0, 0, 0, 1);
   z-index: -1;
 }
 
@@ -34,16 +34,15 @@ canvas {
 }
 
 a {
-  color: #6153b7;
+  color: #0000ff;
 }
 
 .navbar {
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;
   padding: 16px 8%;
-  background-color: rgba(194, 197, 219, 0.5);
+  background-color: rgba(0, 255, 255, 0.1);
   display: flex;
   z-index: 100;
 }
@@ -68,7 +67,7 @@ nav a {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #6153b7;
+  color: #0000ff;
 }
 
 .header .icon {
@@ -91,10 +90,10 @@ section {
   font-weight: 700;
 }
 
-.button {
+.btn-submit {
   border-radius: 8px;
   font-size: 24px;
-  background-color: #e6dc6a;
+  background-color: #00ff00;
   color: white;
   border: none;
   cursor: pointer;
@@ -103,16 +102,14 @@ section {
   float: right;
 }
 
-.button:hover {
-  background-color: #d9c55c;
+.btn-submit:hover {
+  background-color: white;
 }
 
 .btn-intro {
-  border-radius: 8px;
   font-size: 24px;
-  border-color: #e6dc6a;
   color: white;
-  cursor: pointer;
+  border-bottom: 2px solid #00ffff;
   padding-left: 24px;
   padding-right: 24px;
 }
@@ -120,7 +117,7 @@ section {
 .btn-learn {
   align-self: flex-start;
   padding: 10px 20px;
-  border-bottom: 2px solid #e6dc6a;
+  border-bottom: 2px solid #00ff00;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -129,11 +126,11 @@ section {
 }
 
 .btn-learn:hover {
-  background-color: #e6dc6a;
+  background-color: #00ff00;
 }
 
 .btn-intro:hover {
-  background-color: #d9c55c;
+  background-color: #00ffff;
 }
 
 .container {
@@ -172,7 +169,6 @@ section {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Class to apply the fade-in effect */
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
@@ -269,16 +265,10 @@ textarea {
   margin-bottom: 24px;
   width: 160px;
   height: 160px;
-  border: 4px solid;
+  border-style: dashed;
+
   padding: 10px;
-  border-image: repeating-linear-gradient(
-      to bottom right,
-      #f047fe,
-      #6153b7,
-      #e6dc6a,
-      #c2c5db
-    )
-    20;
+  border-color: #ff00ff;
   display: flex;
   flex-direction: column;
   align-items: center;
